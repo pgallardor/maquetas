@@ -1,0 +1,50 @@
+header {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    /*background-color: aquamarine;*/
+}
+
+header .row,
+footer .row {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700px;
+    font-size: 40px;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav .col-sm-1{
+    display: flex;
+    justify-content: flex-start; 
+}
+
+section .col-sm-9 {
+    padding: 20px;
+}
+
+header p {
+    padding: 0 20px;
+    margin: 0;
+}
+
+section p {
+    padding: 7px;
+}
+
+img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.bordered {
+    border: 1px solid black;
+    padding-bottom: 20px;
+}
