@@ -30,11 +30,23 @@
                     <h2>Nombre del contest</h2>
                     <br>
                     <div class="card">
-                      <h5 class="card-header">Descripción</h5>
+                      <h5 class="card-header">
+                          Descripción
+                      </h5>
                       <div class="card-body">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus purus, elementum et arcu vitae, iaculis porta libero. Quisque varius id libero ornare suscipit. In pharetra molestie condimentum. Vivamus ornare quam leo, eu malesuada dui efficitur in. Sed a laoreet mi. Pellentesque a augue augue. Nulla ultricies dolor non felis consectetur feugiat. </p>
                         <p class="card-text">Nunc porttitor pulvinar enim non ornare. Phasellus a erat in est iaculis pharetra eget aliquam libero. Nunc luctus, leo et luctus pretium, leo dui sagittis dui, et viverra nulla metus dapibus eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin tortor non accumsan semper.</p>
                       </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-header">
+                            Formato entrada/salida
+                            <button type="button" class="close"
+                                    data-toggle="collapse" href="#descr">v</button>
+                        </h5>
+                        <div class="card-body" id="descr">
+                            <p class="card-text">Nunc risus nisi, bibendum a varius et, rhoncus et mauris. Proin ornare tellus eros, vel condimentum orci varius et. Morbi tempor malesuada neque. Maecenas tellus magna, venenatis ac tortor et, convallis finibus nibh. Vestibulum suscipit placerat magna, eu luctus elit auctor ac. Nulla facilisi. In in rutrum leo, ac vehicula dui. Nullam nulla metus, accumsan eu erat non, efficitur facilisis erat. Fusce facilisis felis quis orci efficitur, laoreet eleifend libero ultrices. Cras eget commodo tortor. Cras in laoreet quam, eget placerat mi. Morbi hendrerit nec augue eu hendrerit. </p>
+                        </div>
                     </div>
                     <div class="card">
                       <h5 class="card-header">Resultados</h5>
@@ -55,7 +67,9 @@
                             <tr>
                               <th scope="row">203</th>
                               <td><a href="#">pegallardo</a></td>
-                              <td>AntColony v2.1</td>
+                              <td><a data-toggle="popover" 
+                                     title="AntColony v2.1"
+                                     data-content="Metaheurística usando colonia de hormigas">AntColony v2.1</a></td>
                               <td>34.5</td>
                               <td>67.8</td>
                               <td>99.99</td>
@@ -66,7 +80,10 @@
                               <td><a href="#">cpinto</a></td>
                               <td>MathMaster-i</td>
                               <td>35.99</td>
-                              <td>67.8</td>
+                              <td>
+                                  <a rel="popover"
+                                     data-img="https://projects.ncsu.edu/labwrite/res/gh/2d-scatterplot.gif">67.8</a>  
+                              </td>
                               <td>110</td>
                               <td>92.9</td>
                             </tr>
@@ -86,8 +103,37 @@
                     <div class="card">
                       <h5 class="card-header">Enviar una solución</h5>
                       <div class="card-body">
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Seleccionar solver</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Solver 1</option>
+                              <option>Solver 2</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                        <h5 class="card-text">Elige el formato</h5>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">.tar.gz</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                          <label class="form-check-label" for="inlineCheckbox2">.zip</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                          <label class="form-check-label" for="inlineCheckbox3">.rar</label>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="customFile" lang="es">
+                          <label class="custom-file-label" for="customFile">Elige archivo</label>
+                        </div>
+                        <br>
+                        <div class="button-panel on-center">
+                            <button class="btn btn-primary">Enviar</button>  
+                        </div>  
                       </div>
                     </div>
                 </div>
@@ -101,5 +147,13 @@
         $(function () {
             $('[data-toggle="popover"]').popover()
         })
+    </script>
+    <script>
+        $('a[rel=popover]').popover({
+          html: true,
+          trigger: 'hover',
+          placement: 'bottom',
+          content: function(){return '<img src="'+$(this).data('img') + '" />';}
+        });
     </script>
 </html>
