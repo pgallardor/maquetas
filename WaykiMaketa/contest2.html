@@ -24,10 +24,12 @@
             <div class="row">
                 <div class="col-sm-3">
                     <h3>Acerca del autor</h3>
-                    <p>Blablablablabla</p>
+                    <hr>
+                    <h5><strong>Universidad de Concepción</strong></h5>
+                    <p>&emsp; Vestibulum et libero cursus, fringilla erat at, placerat nibh. Integer non ante tristique, vehicula neque eget, consectetur ex. Aenean facilisis quam sit amet efficitur ornare. Sed in sapien porta, hendrerit nulla at, sollicitudin dolor. Proin sollicitudin odio sit amet lectus sodales sodales.</p>
                 </div>
                 <div class="col-sm-9">
-                    <h2>Nombre del contest</h2>
+                    <h2>UDECONTEST</h2>
                     <br>
                     <div class="card">
                       <h5 class="card-header">
@@ -38,7 +40,7 @@
                         <p class="card-text">Nunc porttitor pulvinar enim non ornare. Phasellus a erat in est iaculis pharetra eget aliquam libero. Nunc luctus, leo et luctus pretium, leo dui sagittis dui, et viverra nulla metus dapibus eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin tortor non accumsan semper.</p>
                       </div>
                     </div>
-                    <div class="card">
+                    <div class="card" aria-expanded="false">
                         <h5 class="card-header">
                             Formato entrada/salida
                             <button type="button" class="close"
@@ -104,12 +106,14 @@
                       <h5 class="card-header">Enviar una solución</h5>
                       <div class="card-body">
                           <div class="form-group">
-                            <label for="exampleFormControlSelect1">Seleccionar solver</label>
+                            <h5>Seleccionar solver</h5>
                             <select class="form-control" id="exampleFormControlSelect1">
                               <option>Solver 1</option>
                               <option>Solver 2</option>
                               <option>...</option>
                             </select>
+                            <small class="form-text"><a href="javascript:void(null)"
+                                                        data-toggle="modal" data-target="#exampleModal">...o subir un solver</a></small>
                           </div>
                         <h5 class="card-text">Elige el formato</h5>
                         <div class="form-check form-check-inline">
@@ -139,6 +143,44 @@
                 </div>
             </div>
         </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Subir solver</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                    <label>Nombre <em>solver</em></label>   
+                    <input type="text" class="form-control" placeholder="Elige un título"/>
+                </div>
+                <div class="form-group">
+                    <label>Descripción breve</label>   
+                    <input type="text" class="form-control"/>  
+                </div>
+                <div class="form-group">
+                  <label>Tipo fichero</label>    
+                  <select class="form-control" id="exampleFormControlSelect1">
+                      <option>C/C++</option>
+                      <option>Python</option>
+                      <option>Binario</option>
+                  </select>
+                </div>  
+                <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFile" lang="es">
+                      <label class="custom-file-label" for="customFile">Elige archivo</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success">Subir</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
