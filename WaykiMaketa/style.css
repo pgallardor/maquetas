@@ -81,3 +81,14 @@ img {
 .stats th {
     text-align: center;
 }
+
+.banner {
+    float: none;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.banner img{
+    width: 1500px;
+    height: 250px;
+}
